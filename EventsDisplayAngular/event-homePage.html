@@ -1,0 +1,41 @@
+<div class="container" id="homePage" ng-show="myEventsCntrl.isHomeView">
+    <div>
+        <h1 class="pull-left">Upcoming events</h1>
+        <div class="pull-right">
+            <i class="glyphicon glyphicon-th" id="galleryButton" ng-click="myEventsCntrl.setGalleryView(true)"></i>
+            <i class="glyphicon glyphicon-th-list" id="listButton" ng-click="myEventsCntrl.setGalleryView(false)"></i>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div id="eventsDetails">
+        <div ng-repeat="event in myEventsCntrl.events | filter: { Name : searchText }"  ng-show="myEventsCntrl.isGalleryView">
+            <div ng-class="{'col-md-4 col-sm-6': $index <= 4, 'col-md-3 col-sm-6': $index > 4}">
+                <img ng-src="{{event.Image}}" alt="{{event.Name}}" class="eventGalleryImages" 
+                     ng-mouseover="myEventsCntrl.setOverlayView(true); myEventsCntrl.setCurrentOverlay(event.ID)" />
+                <div class="overlay" data-value="{{event.ID}}" 
+                     ng-click="myEventsCntrl.setHomeView(false); myEventsCntrl.setCurrentEvent(event.ID)" 
+                     ng-show="myEventsCntrl.isOverlayView && myEventsCntrl.currentOverlay === event.ID" 
+                     ng-mouseleave="myEventsCntrl.setOverlayView(false)">
+                    <h4>{{event.Name}}</h4>
+                    <p>{{event.Time}}</p>
+                    <p>{{event.Venue}}</p>
+                </div>
+            </div>
+        </div>
+        <div ng-repeat="event in myEventsCntrl.events | filter: { Name : searchText }" 
+             ng-hide="myEventsCntrl.isGalleryView">
+            <ul class="list-unstyled">
+                <li class="eventList" ng-click="myEventsCntrl.setHomeView(false); myEventsCntrl.setCurrentEvent(event.ID)">
+                    <div class="col-md-3 col-sm-3 hidden-xs">
+                        <img ng-src="{{event.Image}}" alt="{{event.Name}}" class="eventListImages" />
+                    </div>
+                    <div data-value="{{event.ID}}">
+                        <h3>{{event.Name}}</h3>
+                        <p>{{event.Time}}</p>
+                        <p>{{event.Venue}}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

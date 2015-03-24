@@ -1,0 +1,16 @@
+<div class="container" id="descriptionPage" ng-hide="myEventsCntrl.isHomeView">
+    <h1>Event details</h1>
+    <div id="eventDescription">
+        <div ng-repeat="event in myEventsCntrl.events | filter: { ID : myEventsCntrl.currentEvent }">
+            <div class="col-md-4 col-sm-5">
+                <img ng-src="{{event.Image}}" alt="{{event.Name}}" />
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <h3>{{event.Name}}</h3>
+                <span><strong>What</strong><p>{{event.Description}}s</p></span>
+                <span><strong>When</strong><p>{{event.Time}}</p></span>
+                <span><strong>Where</strong><p>{{event.Venue}}</p></span>
+            </div>
+        </div>
+    </div>
+</div>

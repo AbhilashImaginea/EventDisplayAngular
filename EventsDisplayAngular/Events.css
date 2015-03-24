@@ -1,0 +1,139 @@
+/*Navigation*/
+.brandLogo {
+    padding: 5px 15px;
+}
+
+.nav>li>a.profileImg {
+    padding: 10px 15px;
+}
+
+.badge {
+    background-color: red;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+
+.brandLogo img {
+    width: 45px;
+    height: 45px;
+}
+
+.profileImg img {
+    width: 30px;
+    height: 30px;
+}
+
+#searchForm {
+    position: relative;
+    font-style: italic;
+}
+
+#searchForm [type="text"] {
+    background-color: #222222;
+    border-color: #222222;
+    border-bottom-color: white;
+    border-radius: 0px;
+    padding-left: 30px;
+    color: white;
+}
+
+#searchButton {
+    position: absolute;
+    left: 5px;
+    font-size: 16px;
+    top: 9px;
+    color: white;
+}
+
+
+/*Description page*/
+#descriptionPage img {
+    width: 100%;
+    height: 350px;
+}
+
+/*Header*/
+#homePage i.glyphicon {
+    font-size: 30px;
+    margin: 25px 15px 0px 0px;
+    cursor: pointer;
+}
+
+@media (max-width: 450px) {
+    #homePage h1 {
+        width: 180px;
+    }
+}
+
+/*Gallery view*/
+#eventsDetails img.eventGalleryImages {
+    width: 100%;
+    height: 150px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+#eventsDetails div:first-child div:first-child img.eventGalleryImages {
+    height: 320px;
+}
+
+#eventsDetails div {
+    margin-bottom: 20px;
+}
+
+#eventsDetails div.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 150px;
+    background-color: black;
+    color: #fff;
+    background: url(Images/black-bg.png) repeat 0 0;
+    width: 100%;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    z-index: 10;
+    cursor: pointer;
+    transition: all 1s;
+    transform: scale(1, 1.1);
+}
+
+#eventsDetails div.overlay:hover {
+    transform: scale(1, 1);
+    border-left: 15px solid white;
+    border-right: 15px solid white;
+}
+
+#eventsDetails div:first-child div:first-child .overlay {
+    height: 320px;
+}
+/*List view*/
+
+#eventsDetails img.eventListImages {
+    width: 100%;
+    height: 150px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+#eventsDetails li {
+    transition: all 1s;
+}
+
+#eventsDetails li:hover {
+    transform: scale(1.05, 1.1);
+}
+
+.eventList {
+    border-bottom: 1px solid grey;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .eventList {
+        height: 170px;
+    }
+}
